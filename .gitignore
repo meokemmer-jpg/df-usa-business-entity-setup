@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+runs/
+output/
+learnings/
+STOP.flag
+*.log
+.DS_Store

@@ -1,0 +1,55 @@
+df_id: df-usa-business-entity-setup
+df_name: USA-Business-Entity-Setup
+welle_introduced: welle-43
+type: foundation-df
+crux-mk: true
+k0_touch: true
+q0_touch: true
+k0_caveats:
+  - "LLC-Formation-Fees + Anwalt-Honorar (LexVance + Florida-Anwalt)"
+  - "Banking-Account-Eroeffnung Real-Money"
+  - "EIN-Application + Federal-Tax-Setup"
+q0_caveats:
+  - "USA-Business-Domain spaeter Familien-Vehikel"
+  - "Brueder-Anteile potentiell relevant"
+phronesis_required: true
+sandbox_default: true
+
+cascade_isolation: hard
+failure_blast_radius: 1
+output_feeds_into_training: false
+external_anchor_type: government_data
+external_anchor_validation_frequency: monthly
+concurrent_spawn_protection: both
+lock_dir: /tmp/df-usa-business-entity-setup.lock
+lock_stale_age_h: 6
+
+lose_coupling:
+  LC1_graceful_degradation:
+    degradation_modes: [full, degraded_no_external, sandbox_mock]
+    degradation_test_required: true
+  LC2_direct_mode:
+    direct_mode_available: true
+    direct_mode_capability: 0.6
+    direct_mode_trigger: "external API unreachable >30s"
+  LC3_circuit_breaker:
+    circuit_breaker_timeout_s: 30
+    circuit_breaker_open_threshold: 3
+    circuit_breaker_half_open_test_interval_s: 300
+  LC4_failure_isolation:
+    state_externalization: true
+    idempotent_operations: true
+    dependency_dlq_separate: true
+  LC5_health_check:
+    health_check_dependencies: []
+    health_check_degraded_score: 0.7
+    health_check_endpoint_or_file: "branch-hub/state/df-usa-business-entity-setup-health.json"
+
+env_vars:
+  DF_USA_LLC_REAL_ENABLED: "false"
+  PHRONESIS_TICKET: "MISSING"
+
+schedule:
+  cadence: daily
+  time: "04:00"
+  timezone: Europe/Berlin

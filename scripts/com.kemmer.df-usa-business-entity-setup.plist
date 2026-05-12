@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.kemmer.df-usa-business-entity-setup</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/make/Projects/dark-factories/df-usa-business-entity-setup/scripts/run-df-usa-business-entity-setup-mac.sh</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>4</integer>
+        <key>Minute</key><integer>0</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/make/.df-state/usa-business-entity-setup/stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/make/.df-state/usa-business-entity-setup/stderr.log</string>
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
