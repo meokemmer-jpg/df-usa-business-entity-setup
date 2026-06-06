@@ -1,0 +1,8 @@
+{
+  "df": "df-usa-business-entity-setup",
+  "ts": "2026-06-05T17:21:02.679448+00:00",
+  "ok": true,
+  "bytes": 2645,
+  "model": "qwen2.5:14b-instruct",
+  "duration_s": 66.1
+}
