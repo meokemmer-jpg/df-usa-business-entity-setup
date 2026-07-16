@@ -1,9 +1,9 @@
 {
   "df": "df-usa-business-entity-setup",
-  "ts": "2026-07-14T03:00:51.497359+00:00",
+  "ts": "2026-07-15T03:01:06.323390+00:00",
   "maturity": "TESTED",
   "maturity_level": 4,
   "evidence_grade": 4,
-  "wargame_verdict": "CONDITIONAL",
+  "wargame_verdict": null,
   "crux": "[CRUX-MK]"
 }
